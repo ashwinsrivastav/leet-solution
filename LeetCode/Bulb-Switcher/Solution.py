@@ -4,7 +4,7 @@ class Solution:
             return 0
         elif n==1:
             return 1
-        elif n>9999:
+        elif n>9999: #to save time 
             return int(sqrt(n))
         else:
             a=[1]*n;count=2
