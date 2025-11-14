@@ -1,14 +1,10 @@
-class Solution(object):
-    def isSubsequence(self, s, t):
-        abc=""
-        #method finds s in the t , and then it writes on the abc string.
-        for i in range(len(t)):
-            for j in range(len(s)):
-                if s[j]== t[i]:
-                    abc += t[i]
-                    break
-        #if they are some , it will be true or if it has it ,it will be true "aba" -> "baba" like that.
-        if abc == s  or abc.find(s)>0 :
-            return True
-        else:
-            return False
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        count=0
+        for i in s:
+            if i in t:
+                count+=1
+                a=t.index(i)
+                t=t[a+1:]
+        if count==len(s):return True
+        return False
