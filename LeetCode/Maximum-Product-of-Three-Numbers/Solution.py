@@ -1,2 +1,10 @@
-If all the values are positive :  ( 1 2 3 4 5 )
-                  return the product of the last 3 values (3*4*5) 
+import math
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        if len(nums)==3:
+            return math.prod(nums)
+        nums=sorted(nums)
+        c=nums[0]*nums[1]*nums[-1]
+        a=nums[-3]*nums[-2]*nums[-1]
+        return a if a>c else c
+
