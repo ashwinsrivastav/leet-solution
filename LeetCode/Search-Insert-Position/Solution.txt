@@ -1,0 +1,13 @@
+1class Solution:
+2    def searchInsert(self, nums: List[int], target: int) -> int:
+3        if nums[-1] < target:
+4            return len(nums)
+5        if nums[0] >= target:
+6            return 0
+7        for i in range(1, len(nums)):
+8            if nums[i] < target:
+9                continue
+10            elif nums[i] == target:
+11                return i
+12            else:
+13                return i
