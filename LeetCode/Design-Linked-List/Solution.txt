@@ -1,0 +1,75 @@
+1class MyLinkedList {
+2
+3    private ListNode head;
+4    private int size;
+5
+6    private static class ListNode {
+7        int data;
+8        ListNode next;
+9
+10        ListNode(int data) {
+11            this.data = data;
+12        }
+13    }
+14
+15    public MyLinkedList() {
+16        head = new ListNode(0);
+17        size = 0;
+18    }
+19
+20    public int get(int index) {
+21        if (index < 0 || index >= size) {
+22            return -1;
+23        }
+24
+25        ListNode curr = head.next;
+26        for (int i = 0; i < index; i++) {
+27            curr = curr.next;
+28        }
+29        return curr.data;
+30    }
+31
+32    public void addAtHead(int val) {
+33        addAtIndex(0, val);
+34    }
+35
+36    public void addAtTail(int val) {
+37        addAtIndex(size, val);
+38    }
+39
+40    public void addAtIndex(int index, int val) {
+41        if (index < 0 || index > size) return;
+42
+43        ListNode prev = head;
+44        for (int i = 0; i < index; i++) {
+45            prev = prev.next;
+46        }
+47
+48        ListNode node = new ListNode(val);
+49        node.next = prev.next;
+50        prev.next = node;
+51        size++;
+52    }
+53
+54    public void deleteAtIndex(int index) {
+55        if (index < 0 || index >= size) return;
+56        
+57        ListNode prev = head;
+58        for(int i=0;i<index;i++) {
+59            prev = prev.next;
+60        }
+61
+62        prev.next = prev.next.next;
+63        size--;
+64    }
+65}
+66
+67/**
+68 * Your MyLinkedList object will be instantiated and called as such:
+69 * MyLinkedList obj = new MyLinkedList();
+70 * int param_1 = obj.get(index);
+71 * obj.addAtHead(val);
+72 * obj.addAtTail(val);
+73 * obj.addAtIndex(index,val);
+74 * obj.deleteAtIndex(index);
+75 */
