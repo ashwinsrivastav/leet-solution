@@ -1,0 +1,1 @@
+return sum(1 for i in zip(*strs) if list(i)!=sorted(i))
