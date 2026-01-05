@@ -1,8 +1,4 @@
-13
-2
-50000
-911
-1
-8957
-10
-50
+1class Solution:
+2    def lexicalOrder(self, n: int) -> List[int]:
+3        i=[str(i) for i in range(1,n+1) ]
+4        return [int(x) for x in sorted(i)]
