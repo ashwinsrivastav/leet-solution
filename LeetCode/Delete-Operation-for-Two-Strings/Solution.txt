@@ -1,0 +1,14 @@
+1class Solution:
+2    def minDistance(self, word1: str, word2: str) -> int:
+3        m = len(word1) 
+4        n = len(word2)
+5        L = [[None]*(n + 1) for i in range(m + 1)] 
+6        for i in range(m + 1): 
+7            for j in range(n + 1):
+8                if i == 0 or j == 0 : 
+9                    L[i][j] = 0
+10                elif word1[i-1] == word2[j-1]: 
+11                    L[i][j] = L[i-1][j-1]+1
+12                else: 
+13                    L[i][j] = max(L[i-1][j], L[i][j-1]) 
+14        return (m+n)-((L[m][n])*2) 
