@@ -1,0 +1,20 @@
+1def fact(n)-> list:
+2    factt=[]
+3    for i in range(1,int(sqrt(n))+1):
+4        if n%i==0:
+5            factt.append(i)
+6            if n//i != i:
+7                factt.append(n//i)
+8    return factt 
+9
+10class Solution:
+11    def sumFourDivisors(self, nums: List[int]) -> int:
+12        factors=[];summ=0
+13        for i in nums:
+14            factors.extend(fact(i))
+15            #factors.append(i)
+16            if len(factors)==4:
+17                summ+=sum(factors)
+18            factors.clear()
+19        return summ
+20
