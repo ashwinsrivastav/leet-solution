@@ -1,0 +1,13 @@
+1from collections import Counter
+2class Solution:
+3    def frequencySort(self, s: str) -> str:
+4        re=""
+5        count=Counter(s)
+6        for key , value in sorted(count.items(), key=lambda item: item[1], reverse=True):
+7            re+=(key)*value
+8        return re
+9
+10
+11
+12
+13            
