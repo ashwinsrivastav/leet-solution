@@ -1,0 +1,8 @@
+1class Solution:
+2    def mostWordsFound(self, sentences: List[str]) -> int:
+3        space=0;max=0
+4        for i in sentences:
+5            space=i.count(" ")
+6            if space>max:
+7                max=space
+8        return max+1
