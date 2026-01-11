@@ -1,11 +1,7 @@
-class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
-        freq = {}
-        #{"1" :2 ,0 :1 :} -> 
-        for num in nums:
-            freq[num] = freq.get(num, 0) + 1  # same as Java getOrDefault(num, 0) + 1
-
-        # filter the one that appears only once
-        for key, value in freq.items():
-            if value == 1:
-                return key
+1class Solution:
+2    def singleNumber(self, nums: List[int]) -> int:
+3        nums=sorted(nums)
+4        for i in nums:
+5            nums.remove(i)
+6            if i not in nums:
+7                return i
