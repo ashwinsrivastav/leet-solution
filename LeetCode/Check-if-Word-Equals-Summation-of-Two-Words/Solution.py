@@ -1,0 +1,2 @@
+    return target==(first+second);
+}
