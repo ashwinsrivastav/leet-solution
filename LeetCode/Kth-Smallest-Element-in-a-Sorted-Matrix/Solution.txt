@@ -1,0 +1,5 @@
+1class Solution:
+2    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+3        lis=sum(matrix,[])
+4        lis.sort()
+5        return lis[k-1]
