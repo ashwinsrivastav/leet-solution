@@ -9,7 +9,8 @@
 9                    pass
 10                else:
 11                    stopper=1
-12            if stopper==0:
-13                res+=len(k)
-14            stopper=0
-15        return res
+12                    break
+13            if stopper==0:
+14                res+=len(k)
+15            stopper=0
+16        return res
