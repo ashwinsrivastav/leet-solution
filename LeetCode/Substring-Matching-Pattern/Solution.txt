@@ -1,0 +1,10 @@
+1class Solution:
+2    def hasMatch(self, s: str, p: str) -> bool:
+3        p=list(filter(None,p.split("*")));k=s
+4        for i in p:
+5            if i in k:
+6                cut=k.index(i)
+7                k=k[cut+len(i):]
+8            else:
+9                return False
+10        return True
