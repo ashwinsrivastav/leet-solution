@@ -10,8 +10,9 @@
 10            a=''
 11        if a!='':
 12            num.append(int(a))
-13        return len(set(num))
-14
+13        print(num)
+14        return len(set(num))
 15
 16
 17
+18
