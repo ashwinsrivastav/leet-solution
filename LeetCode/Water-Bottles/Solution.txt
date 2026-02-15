@@ -1,0 +1,9 @@
+1class Solution:
+2    def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
+3        drink=numBottles
+4        while numBottles//numExchange>=1:
+5            drink+=numBottles//numExchange
+6            numBottles=(numBottles%numExchange)+(numBottles//numExchange)
+7        return drink
+8            
+9
