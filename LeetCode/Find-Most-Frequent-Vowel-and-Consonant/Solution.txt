@@ -1,0 +1,10 @@
+1class Solution:
+2    def maxFreqSum(self, s: str) -> int:
+3        vowel=('a', 'e', 'i', 'o','u')
+4        Vfeq={1:0};Cfeq={1:0}
+5        for i in s:
+6            if i in vowel:
+7                Vfeq[i]=Vfeq.get(i,0)+1
+8            else:
+9                Cfeq[i]=Cfeq.get(i,0)+1
+10        return max(Vfeq.values()) + max(Cfeq.values())
