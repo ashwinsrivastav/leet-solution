@@ -1,0 +1,9 @@
+1class Solution:
+2    def divideString(self, s: str, k: int, fill: str) -> List[str]:
+3        extra=k-(len(s)%k)
+4        if extra!=k:
+5            s+=fill*extra
+6        res=[]
+7        for i in range(0,len(s),k):
+8            res.append(s[i:i+k])
+9        return res
