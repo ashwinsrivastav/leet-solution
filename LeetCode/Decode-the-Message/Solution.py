@@ -8,7 +8,7 @@ class Solution:
                 decoder[i]=alpha[c]
                 c+=1
                 visited+=i
-            if c>26:
+            if c>25:
                 break
         res=""
         for i in message:
