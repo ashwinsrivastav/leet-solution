@@ -1,0 +1,46 @@
+1class Spreadsheet {
+2    Map<String, Integer> map = new HashMap<>();
+3    public Spreadsheet(int rows) {
+4        for (int i = 1; i <= rows; i++) {
+5            for (int j = 0; j < 26; j++) {
+6                String key = (char)(j + 'A') + ""  + i;
+7                map.put(key, 0);
+8            }
+9        }
+10    }
+11    
+12    public void setCell(String cell, int value) {
+13        map.put(cell, value);
+14    }
+15    
+16    public void resetCell(String cell) {
+17        map.put(cell, 0);
+18    }
+19    
+20    public int getValue(String formula) {
+21        formula = formula.substring(1);
+22        String[] parts = formula.split("\\+");
+23        int res = 0;
+24        if (parts[0].charAt(0) >= 'A' && parts[0].charAt(0) <= 'Z') {
+25            res += map.get(parts[0]);
+26        } else {
+27            res += Integer.parseInt(parts[0]);
+28        }  
+29
+30         if (parts[1].charAt(0) >= 'A' && parts[1].charAt(0) <= 'Z') {
+31            res += map.get(parts[1]);
+32        } else {
+33            res += Integer.parseInt(parts[1]);
+34        }  
+35
+36        return res;
+37    }
+38}
+39
+40/**
+41 * Your Spreadsheet object will be instantiated and called as such:
+42 * Spreadsheet obj = new Spreadsheet(rows);
+43 * obj.setCell(cell,value);
+44 * obj.resetCell(cell);
+45 * int param_3 = obj.getValue(formula);
+46 */
