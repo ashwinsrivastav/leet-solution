@@ -1,0 +1,26 @@
+1class Solution:
+2    def lengthOfLongestSubstring(self, s: str) -> int:
+3        count=0;uni=set();max=0;i=0
+4        while i<len(s):
+5            if s[i] not in uni:
+6                uni.add(s[i])
+7                count+=1
+8                i+=1
+9            else:
+10                index=s.index(s[i])
+11                s=s[index+1::]
+12                i=0
+13                if count>max:
+14                    max=count
+15                    uni.clear()
+16                    uni.add(s[i])
+17                    count=1
+18                    i+=1
+19                else:
+20                    uni.clear()
+21                    uni.add(s[i])
+22                    count=1
+23                    i+=1
+24        if count>max:
+25            max=count
+26        return max
