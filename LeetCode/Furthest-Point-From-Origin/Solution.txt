@@ -1,0 +1,8 @@
+1class Solution:
+2    def furthestDistanceFromOrigin(self, moves: str) -> int:
+3        countl=moves.count("L")
+4        countr=moves.count("R")
+5        count_=moves.count("_")
+6        if countl>countr:
+7            return countl+count_-countr
+8        return countr+count_-countl
