@@ -1,8 +1,8 @@
-"L_RL__R"
-"_R__LL_"
-"_______"
-"_RLR_LLR_R_LRLL_LR_RRL__LR__R_______L__R_RR__RL__L"
-"LL__L_R_LRRLRR_L_RRRRRL___RLRL_LRLLL_LLLRL__RL_RRR"
-"LLLLL"
-"RRRRR"
-"RRRR________"
+class Solution:
+    def furthestDistanceFromOrigin(self, moves: str) -> int:
+        countl=moves.count("L")
+        countr=moves.count("R")
+        count_=moves.count("_")
+        if countl>countr:
+            return countl+count_-countr
+        return countr+count_-countl
