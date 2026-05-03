@@ -4,7 +4,6 @@
 4        for i in s:
 5            a=a.removeprefix(i)
 6            a=a+i
-7            print(a)
-8            if a==goal:
-9                return True
-10        return False
+7            if a==goal:
+8                return True
+9        return False
