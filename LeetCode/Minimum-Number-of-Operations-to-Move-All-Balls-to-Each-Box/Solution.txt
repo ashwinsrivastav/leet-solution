@@ -1,0 +1,13 @@
+1class Solution:
+2    def minOperations(self, boxes: str) -> List[int]:
+3        position=[] #will come back after learning prefix sum!!!!
+4        for i in range(len(boxes)):
+5            if boxes[i]=="1":
+6                position.append(i)
+7        res=[]
+8        for i in range(len(boxes)):
+9            sum=0
+10            for j in position:
+11                sum+=abs(i-j)
+12            res.append(sum)
+13        return res
