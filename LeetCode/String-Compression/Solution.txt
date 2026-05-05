@@ -1,0 +1,21 @@
+1class Solution:
+2    def compress(self, chars: List[str]) -> int:
+3        count=0;res=""
+4        for i in range(len(chars)-1):
+5            if chars[i]==chars[i+1]:
+6                count+=1
+7            else:
+8                if count==0:
+9                    res+=chars[i]
+10                    count=0
+11                    continue
+12                res+= chars[i]+ str(count+1)
+13                count=0
+14        if count!=0:
+15            res+=chars[-1]+ str(count+1)
+16        else:
+17            res+=chars[-1]
+18        for i in range(len(res)):
+19            chars[i]=res[i]
+20        chars[:]=chars[:len(res)]
+21        return len(chars)
