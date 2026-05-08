@@ -1,0 +1,12 @@
+1class Solution:
+2    def luckyNumbers(self, matrix: List[List[int]]) -> List[int]:
+3        res=[];rmin=0;cmax=[0]*len(matrix[0])
+4        for c in range(len(matrix[0])):
+5            for r in range(len(matrix)):
+6                if matrix[r][c]>cmax[c]:
+7                    cmax[c]=matrix[r][c]
+8        for i in matrix:
+9            if min(i) in cmax:
+10                res.append(min(i))
+11        return res
+12
