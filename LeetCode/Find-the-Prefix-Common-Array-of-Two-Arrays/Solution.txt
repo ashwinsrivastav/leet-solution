@@ -1,0 +1,11 @@
+1class Solution:
+2    def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
+3        seen=set();c=[];count=0
+4        for i in range(len(A)):
+5            seen.add(A[i])
+6            for j in range(i+1):
+7                if B[j] in seen:
+8                    count+=1
+9            c.append(count)
+10            count=0
+11        return c
