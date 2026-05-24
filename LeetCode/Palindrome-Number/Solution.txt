@@ -1,0 +1,11 @@
+1public class Solution {
+2    public bool IsPalindrome(int x) {
+3        if (x < 0)  return false;
+4        string str = x.ToString();
+5        int size = str.Length;
+6        for (int i = 0, j = size - 1; i < size / 2; i++, j--){
+7            if (str[i] != str[j])   return false;
+8        }
+9        return true;
+10    }
+11}
