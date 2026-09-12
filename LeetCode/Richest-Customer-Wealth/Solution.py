@@ -1,5 +1,1 @@
-class Solution:
-    def maximumWealth(self, accounts: List[List[int]]) -> int:
-        for i in range(len(accounts)):
-            accounts[i]=sum(accounts[i])
-        return max(accounts)
+1st customer has wealth = 1 + 2 + 3 = 6
